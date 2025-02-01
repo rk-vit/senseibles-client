@@ -11,7 +11,7 @@ const AdminLogin = () => {
     e.preventDefault();
     console.log("Logging in with:", { email, password });
     try{
-      const response = await axios.post("https://noterapp.vercel.app/login", { username: email, password: password },{withCredentials:true});
+      const response = await axios.post("https://senseibles-server.vercel.app/login", { username: email, password: password },{withCredentials:true});
       console.log(response.status);
       if(response.status==200){
           navigate("/secret-admHome");

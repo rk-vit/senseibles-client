@@ -9,6 +9,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AdminEvents from "./pages/AdminEvents";
 import AddEventForm from "./components/AddEventForm";
 import EventDetails from "./components/EventDetails";
+import Check from "./pages/chek";
 function App() {
   return (
     <div>
@@ -20,7 +21,7 @@ function App() {
         <Route path="/secret-admEve" element={<ProtectedRoute><AdminEvents/></ProtectedRoute>}/>
         <Route path="/AddEvents" element={<ProtectedRoute><AddEventForm/></ProtectedRoute>}/>
         <Route path="/event/:event_id" element={<ProtectedRoute><EventDetails/></ProtectedRoute>}/>
-
+        <Route path="/check" element={Check} />
 
     </Routes>
     </div>
