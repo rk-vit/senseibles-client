@@ -1,0 +1,108 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.8); /* Transparent white */
+    backdrop-filter: blur(10px); /* Adds frosted glass effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    font-family: 'Arial', sans-serif;
+    position: sticky; /* Use sticky positioning */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo-icon {
+    width: auto;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+  }
+  .logo h2 {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: 30px;
+
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Space between nav and button */
+  }
+  
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav a {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(73, 73, 73);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav a:hover {
+    color: red; /* Hover color */
+  }
+  
+  /* Animation for nav links */
+  .nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: red;
+    transition: width 0.3s;
+  }
+  
+  .nav a:hover::after {
+    width: 100%;
+  }
+  .menu-icon {
+    display: none;
+  }
+  
+  
+  /* Existing CSS here... */
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    /* Hide nav links on smaller screens */
+    .nav {
+      display: none; /* Hide nav links */
+      flex-direction: column;
+      gap: 1rem;
+      position: absolute;
+      top: 60px; /* Position below the header */
+      right: 2rem;
+      background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+  
+    /* Show nav links when active */
+    .nav.active {
+      display: flex;
+    }
+  
+    /* Menu icon */
+    .menu-icon {
+      display: block; /* Show on mobile */
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: rgb(73, 73, 73);
+    }
+  }
+  
+
+  

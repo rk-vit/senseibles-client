@@ -1,0 +1,19 @@
+
+.button {
+    background-color: red; /* Default background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding for the button */
+    font-size: 16px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Hover effects */
+  .button.hovered {
+    background-color: white; /* Change background on hover */
+    color: red; /* Change text color on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+  }
+  

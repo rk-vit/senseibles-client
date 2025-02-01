@@ -1,0 +1,83 @@
+/* Reset body margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  /* Container for the landing page */
+  .landingPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #ffffff;
+    color: rgb(73, 73, 73);
+    padding: 0 1rem;
+  }
+  
+  /* Main welcome text */
+  .landingPage h1 {
+    margin: 0.5rem 0;
+    font-size: 2.5rem;
+    color: #333; /* Primary color for main text */
+    font-weight: 700;
+  }
+  
+  /* Animated text styling */
+  .landingPage h1:nth-of-type(3) {
+    color: #e62b1e; /* TED red for animated text */
+  }
+  
+  /* Down arrow styling */
+  .down-arrow {
+    font-size: 2.5rem;
+    color: #e62b1e; /* TED red */
+    cursor: pointer;
+    position: absolute;
+    bottom: 2rem;
+    animation: bounce 2s infinite; /* Bounce animation */
+    transition: color 0.3s ease;
+  }
+  
+  .down-arrow:hover {
+    color: #333;
+  }
+  
+  /* Bounce animation */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .landingPage h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Fade-in animation for text */
+  .landingPage h1, .TypeAnimation {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

@@ -1,0 +1,54 @@
+.department-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 8px;
+    background: #ffffff; /* White background */
+    color: #333;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  
+    /* Dotted Pattern */
+    background-image: radial-gradient(circle, rgba(200, 200, 200, 0.2) 1px, transparent 1px);
+    background-size: 15px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  /* Hover effect */
+  .department-card:hover {
+    background-color: #e62b1e; /* Red theme on hover */
+    color: white;
+    background-image: none; /* Remove pattern on hover for a smooth transition */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Slightly more intense shadow */
+  }
+  
+  .department-card .department-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  .department-card .department-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .department-card .department-description {
+    display: none; /* Initially hidden */
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .department-card:hover .department-name {
+    display: none;
+  }
+  
+  .department-card:hover .department-description {
+    display: block; /* Show description on hover */
+  }
+  
