@@ -22,10 +22,10 @@ const AddEventForm = ({ onClose, onEventAdded, formName, event }) => {
 
     try {
       if (formName === "Add") {
-        await axios.post("http://localhost:3000/adm-events", formData);
+        await axios.post("https://senseibles-server.vercel.app/adm-events", formData);
       } else if (formName === "Modify" && event?.event_id) {
         await axios.patch(
-          `http://localhost:3000/adm-events/${event.event_id}`,
+          `https://senseibles-server.vercel.app/adm-events/${event.event_id}`,
           formData
         );
       }

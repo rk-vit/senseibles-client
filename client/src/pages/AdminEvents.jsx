@@ -14,7 +14,7 @@ const AdminEvents = () => {
   // Function to fetch events
   const fetchEvents = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/adm-events");
+      const response = await axios.get("https://senseibles-server.vercel.app/adm-events");
       setEvents(response.data);
     } catch (err) {
       console.error("Failed to fetch events:", err);

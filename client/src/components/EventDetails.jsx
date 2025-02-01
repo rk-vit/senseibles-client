@@ -8,7 +8,7 @@ const EventDetails = ({ event, closeModal, onModify, onDelete ,fetchEvents,setIs
   const modifyEvent = async()=>{
         alert("Modify clicked");
         try {
-          const response = await axios.get("http://localhost:3000/adm-events");
+          const response = await axios.get("https://senseibles-server.vercel.app/adm-events");
           setUpdateEvent(response.data);
         } catch (err) {
           console.error("Failed to fetch events:", err);
@@ -27,7 +27,7 @@ const EventDetails = ({ event, closeModal, onModify, onDelete ,fetchEvents,setIs
   const deleteEvent = async()=>{
         try{
           console.log(event.event_id)
-          const response = await axios.delete(`http://localhost:3000/adm-events/${event.event_id}`);
+          const response = await axios.delete(`https://senseibles-server.vercel.app/${event.event_id}`);
           setShowModifyEvent(false);
           setIsModalOpen(false);
           fetchEvents();
