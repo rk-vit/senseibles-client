@@ -9,7 +9,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AdminEvents from "./pages/AdminEvents";
 import AddEventForm from "./components/AddEventForm";
 import EventDetails from "./components/EventDetails";
-import Check from "./pages/chek";
+import Check from "./pages/check";
 function App() {
   return (
     <div>
