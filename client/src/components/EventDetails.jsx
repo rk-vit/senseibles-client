@@ -27,7 +27,7 @@ const EventDetails = ({ event, closeModal, onModify, onDelete ,fetchEvents,setIs
   const deleteEvent = async()=>{
         try{
           console.log(event.event_id)
-          const response = await axios.delete(`https://senseibles-server.vercel.app/${event.event_id}`);
+          const response = await axios.delete(`https://senseibles-server.vercel.app/adm-events/${event.event_id}`);
           setShowModifyEvent(false);
           setIsModalOpen(false);
           fetchEvents();
