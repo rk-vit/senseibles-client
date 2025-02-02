@@ -14,7 +14,7 @@ const AdminRegister = () => {
     try{
         const response = await axios.post("https://senseibles-server.vercel.app/register",{user:email,name:name,pass:password});
         if(response.status===201){
-            navigate("/login");
+            navigate("/secret-admLog");
         }
     }catch(err){
         console.log("Error in registration  :-"+err)
@@ -22,7 +22,7 @@ const AdminRegister = () => {
     };
 
   const goToLogin = () => {
-    navigate("/login");
+    navigate("/secret-admLog");
   };
 
   return (

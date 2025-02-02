@@ -23,7 +23,7 @@ const AdminLogin = () => {
     };
 
   const goToRegister = () => {
-    navigate("/register");
+    navigate("/secret-admReg");
   };
 
   return (
