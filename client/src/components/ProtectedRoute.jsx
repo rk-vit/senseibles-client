@@ -22,7 +22,7 @@ const ProtectedRoute = ({ children }) => {
         return <div>Loading...</div>; // Show a loading state while checking auth
     }
 
-    return isAuthenticated ? children : <Navigate to="/login" />;
+    return isAuthenticated ? children : <Navigate to="/secret-admLog" />;
 };  
 
 export default ProtectedRoute;
