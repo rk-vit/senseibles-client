@@ -1,33 +1,45 @@
-import React, { useState } from "react";
-import './comp-css/Header.css';
-import Button from "./button";
+import { useState, useEffect } from "react"
+import "./comp-css/Header.css"
 
-function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <div className="header">
-      <div className="logo">
-        <h2><b>SENSE</b></h2>
-        <h2>ibles</h2>
-      </div>
-      <div className="header-right">
-        <nav className={`nav ${menuOpen ? "active" : ""}`}>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <a href="#contact">Admin</a>
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+      <div className="header-content">
+        <div className="logo">Senseibles</div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#departments">Departments</a>
+            </li>
+            <li>
+              <a href="#events">Events</a>
+            </li>
+            <li>
+              <a href="#blog">Blog</a>
+            </li>
+          </ul>
         </nav>
-        <Button text="Events" />
-        <div className="menu-icon" onClick={toggleMenu}>
-          ☰
-        </div>
       </div>
-    </div>
-  );
+    </header>
+  )
 }
 
-export default Header;
+export default Header
+
