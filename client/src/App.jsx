@@ -9,11 +9,12 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AdminEvents from "./pages/AdminEvents";
 import AddEventForm from "./components/AddEventForm";
 import EventDetails from "./components/EventDetails";
+import "./App.css"
 function App() {
   return (
-    <div>
+    <div className="app">
     <Routes>
-        <Route path="/" element={<LandingPage/>}/>
+        <Route path="/"  element={<LandingPage/>}/>
         <Route path="/secret-admLog" element={<AdminLogin/>}/>
         <Route path="/secret-admReg" element={<AdminRegister/>}/>
         <Route path="/secret-admHome" element={<ProtectedRoute><AdminHome/></ProtectedRoute>}/>

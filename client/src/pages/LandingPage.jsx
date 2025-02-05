@@ -1,17 +1,37 @@
-import Header from "../components/header"
+import { useEffect } from "react"
+import Header from "../components/Header"
 import AboutUs from "../components/AboutUs"
 import Departments from "../components/Departments"
 import DepartmentLeads from "../components/DepartmentLeads"
 import Events from "../components/Events"
 import BlogSlider from "../components/BlogSlider"
-import "./page-css/LandingPage.css"
 import WelcomeText from "../components/WelcomeText"
+import "./page-css/LandingPage.css"
+
 const LandingPage = () => {
+  useEffect(() => {
+    const sections = document.querySelectorAll("section")
+
+    const revealSection = () => {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top
+        if (sectionTop < window.innerHeight - 100) {
+          section.classList.add("visible")
+        }
+      })
+    }
+
+    window.addEventListener("scroll", revealSection)
+    revealSection() // Initial check
+
+    return () => window.removeEventListener("scroll", revealSection)
+  }, [])
+
   return (
     <div className="app">
       <Header />
       <main>
-        <WelcomeText/>
+        <WelcomeText />
         <AboutUs />
         <Departments />
         <DepartmentLeads />
@@ -23,4 +43,3 @@ const LandingPage = () => {
 }
 
 export default LandingPage
-

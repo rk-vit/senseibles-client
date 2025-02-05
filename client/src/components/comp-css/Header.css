@@ -1,27 +1,46 @@
+/* Header */
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
   z-index: 1000;
-  transition: all 0.3s ease;
+  border-radius: 0 0 50px 50px; /* Curved bottom */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  transition: all 0.3s ease-in-out;
+
 }
 
+/* Header Content */
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: rgba(10, 25, 47, 0.8);
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px 40px;
+  background: linear-gradient(to right, rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.85));
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 50px 50px; /* Matching curve */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Shrinking effect on scroll */
+.header.scrolled {
+  width: 92%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .header.scrolled .header-content {
-  padding: 10px 20px;
-  background-color: rgba(10, 25, 47, 0.95);
+  padding: 12px 40px;
+  background: rgba(10, 25, 47, 0.95);
+  border-bottom: 2px solid rgba(100, 255, 218, 0.3);
 }
 
+/* Logo */
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
@@ -30,6 +49,7 @@
   letter-spacing: 2px;
 }
 
+/* Navigation */
 nav ul {
   display: flex;
   list-style-type: none;
@@ -38,19 +58,44 @@ nav ul {
 }
 
 nav ul li {
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 nav ul li a {
   color: #e6f1ff;
   text-decoration: none;
-  transition: color 0.3s ease;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
+/* Hover Effect */
 nav ul li a:hover {
+  background: rgba(100, 255, 218, 0.2);
   color: #64ffda;
+  transform: translateY(-2px);
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    width: 98%;
+    border-radius: 0 0 30px 30px;
+  }
+
+  .header-content {
+    padding: 12px 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}
