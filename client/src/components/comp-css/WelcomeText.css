@@ -1,77 +1,107 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .landing-page {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  height: 100vh;
+  overflow: hidden; /* Prevent extra scrolling */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background: url('/images/Gemini_Generated_Image_5114c5114c5114c5.jpeg') center/cover no-repeat;
+  background-size: cover; /* Ensure the image covers the entire screen */
+  background-attachment: fixed;
+}
+
+.landing-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 25, 47, 0.7);
+}
+
+.landing-content {
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-text,
+.subtitle,
+.cta-button {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.welcome-text.visible,
+.subtitle.visible,
+.cta-button.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.welcome-text {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: red;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.highlight {
+  color: #64ffda;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #8892b0;
+  transition-delay: 0.3s;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #64ffda;
+  color: #0a192f;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  transition-delay: 0.6s;
+}
+
+.cta-button:hover {
+  background-color: #e6f1ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(100, 255, 218, 0.2);
+}
+
+/* Responsive background fix for mobile */
+@media (max-width: 768px) {
+  .landing-page {
+    background-attachment: scroll; /* Prevent fixed bg issues on mobile */
+    background-size: cover; /* Ensure it fits the screen */
   }
-  
-  .landing-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(10, 25, 47, 0.7);
-  }
-  
-  .landing-content {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .welcome-text,
-  .subtitle,
-  .cta-button {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-  }
-  
-  .welcome-text.visible,
-  .subtitle.visible,
-  .cta-button.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
+
   .welcome-text {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: red;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem; /* Adjust for smaller screens */
   }
-  
-  .highlight {
-    color: #64ffda;
-  }
-  
+
   .subtitle {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    color: #8892b0;
-    transition-delay: 0.3s;
-  }
-  
-  .cta-button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #64ffda;
-    color: #0a192f;
-    text-decoration: none;
-    border-radius: 4px;
     font-size: 1.2rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    transition-delay: 0.6s;
   }
-  
-  .cta-button:hover {
-    background-color: #e6f1ff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(100, 255, 218, 0.2);
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 20px;
   }
-  
-  
+}

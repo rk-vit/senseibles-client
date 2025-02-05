@@ -1,15 +1,15 @@
 /* Header */
 .header {
   position: fixed;
-  
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 95%;
   z-index: 1000;
-  border-radius: 0 0 50px 50px; /* Curved bottom */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  border-radius: 0 0 50px 50px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-in-out;
-
+  background: linear-gradient(to right, rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.85));
 }
 
 /* Header Content */
@@ -21,10 +21,9 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 18px 40px;
-  background: linear-gradient(to right, rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.85));
   backdrop-filter: blur(10px);
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0 0 50px 50px; /* Matching curve */
+  border-radius: 0 0 50px 50px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -79,23 +78,74 @@ nav ul li a:hover {
   transform: translateY(-2px);
 }
 
-/* Responsive Design */
+/* Hamburger Menu (Hidden by Default) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 30px;
+  height: 4px;
+  background: #64ffda;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Rotate bars when menu opens */
+.hamburger .bar.open:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger .bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger .bar.open:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+.nav-links {
+  display: flex;
+}
+
+/* Mobile Menu Hidden */
 @media (max-width: 768px) {
-  .header {
-    width: 98%;
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 25, 47, 0.95);
+    text-align: center;
+    padding: 20px 0;
     border-radius: 0 0 30px 30px;
+    transition: all 0.3s ease-in-out;
   }
 
-  .header-content {
-    padding: 12px 20px;
-  }
-
-  nav ul {
+  .nav-links ul {
     flex-direction: column;
-    align-items: center;
   }
 
-  nav ul li {
+  .nav-links ul li {
     margin: 10px 0;
+  }
+
+  .nav-links ul li a {
+    display: block;
+    padding: 12px;
+    font-size: 1.2rem;
+  }
+
+  /* Show mobile menu when open */
+  .nav-links.mobile-menu-open {
+    display: block;
   }
 }
