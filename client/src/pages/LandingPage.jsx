@@ -1,5 +1,4 @@
 import { useEffect } from "react"
-import Header from "../components/Header"
 import AboutUs from "../components/AboutUs"
 import Departments from "../components/Departments"
 import DepartmentLeads from "../components/DepartmentLeads"
@@ -7,6 +6,7 @@ import Events from "../components/Events"
 import BlogSlider from "../components/BlogSlider"
 import WelcomeText from "../components/WelcomeText"
 import "./page-css/LandingPage.css"
+import Header from "../components/header"
 
 const LandingPage = () => {
   useEffect(() => {
@@ -29,7 +29,7 @@ const LandingPage = () => {
 
   return (
     <div className="app">
-      <Header />
+      <Header/>
       <main>
         <WelcomeText />
         <AboutUs />
