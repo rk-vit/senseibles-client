@@ -28,7 +28,7 @@ const LandingPage = () => {
   }, [])
 
   return (
-    <div className="app">
+    <div className="app" >
       <Header/>
       <main>
         <WelcomeText />

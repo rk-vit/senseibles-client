@@ -12,7 +12,7 @@ import EventDetails from "./components/EventDetails";
 import "./App.css"
 function App() {
   return (
-    <div className="app">
+    <div className="app" style={{scrollBehavior: "smooth"}}>
     <Routes>
         <Route path="/"  element={<LandingPage/>}/>
         <Route path="/secret-admLog" element={<AdminLogin/>}/>
